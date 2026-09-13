@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Mahima 🌸</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ffd6e7, #d9c2ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Floating hearts */
+        .floating {
+            position: absolute;
+            bottom: -50px;
+            font-size: 28px;
+            animation: floatUp 7s linear infinite;
+            opacity: 0.8;
+            pointer-events: none;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .card {
+            width: 90%;
+            max-width: 430px;
+            min-height: 520px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 30px;
+            padding: 35px 25px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .slide {
+            display: none;
+            animation: appear 0.7s ease;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: scale(0.8) translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .emoji {
+            font-size: 85px;
+            animation: bounce 1.5s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        h1 {
+            color: #ff4f81;
+            font-size: 34px;
+            margin: 15px 0;
+        }
+
+        p {
+            color: #444;
+            font-size: 20px;
+            line-height: 1.6;
+        }
+
+        .highlight {
+            color: #ff4f81;
+            font-weight: bold;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 30px;
+            background: #ff4f81;
+            color: white;
+            font-size: 17px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.08);
+        }
+
+        .small {
+            color: #999;
+            font-size: 14px;
+            margin-top: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating decorations -->
+    <div class="floating" style="left: 5%; animation-delay: 0s;">🌸</div>
+    <div class="floating" style="left: 20%; animation-delay: 2s;">💗</div>
+    <div class="floating" style="left: 40%; animation-delay: 4s;">✨</div>
+    <div class="floating" style="left: 65%; animation-delay: 1s;">🦋</div>
+    <div class="floating" style="left: 85%; animation-delay: 3s;">💖</div>
+
+    <div class="card">
+
+        <!-- SLIDE 1 -->
+        <div class="slide active" id="slide1">
+
+            <div class="emoji">🥺</div>
+
+            <h1>Mahima... 🌸</h1>
+
+            <p>
+                Oyee, ab itna sad rehna
+                <br>
+                allowed nahi hai. 😭
+            </p>
+
+            <p>
+                Ek chhoti si baat
+                <br>
+                <span class="highlight">sunogi? 👀</span>
+            </p>
+
+            <button onclick="nextSlide()">
+                Haan bolo 💗
+            </button>
+
+        </div>
+
+
+        <!-- SLIDE 2 -->
+        <div class="slide" id="slide2">
+
+            <div class="emoji">🫂</div>
+
+            <h1>Mahima, sun na...</h1>
+
+            <p>
+                Ab jo bhi hua,
+                <br>
+                uske baare mein
+                <br>
+                zyada mat sochna. 😌
+            </p>
+
+            <p>
+                Kabhi-kabhi hum
+                <br>
+                chhoti si baat ko
+                <br>
+                <span class="highlight">bahut zyada soch lete hain. 🥺</span>
+            </p>
+
+            <button onclick="nextSlide()">
+                Last wali baat 💕
+            </button>
+
+        </div>
+
+
+        <!-- SLIDE 3 -->
+        <div class="slide" id="slide3">
+
+            <div class="emoji">😊</div>
+
+            <h1>Bas ab smile karo 🌸</h1>
+
+            <p>
+                <b>Mahima, ab sad mat raho yaar. 🥺</b>
+            </p>
+
+            <p>
+                Tum sad rehti ho na,
+                <br>
+                toh mujhe bilkul achha nahi lagta.
+                🫂
+            </p>
+
+            <p>
+                Jo bhi hua, thoda sa
+                <br>
+                <span class="highlight">smile kar do... 💗</span>
+            </p>
+
+            <p>
+                Tumhari smile zyada achhi hai,
+                <br>
+                ye sad face nahi. 😌🌸
+            </p>
+
+            <div class="small">
+                Ab ek smile toh banti hai 😂💗
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        let currentSlide = 1;
+
+        function nextSlide() {
+
+            document
+                .getElementById("slide" + currentSlide)
+                .classList.remove("active");
+
+            currentSlide++;
+
+            if (currentSlide > 3) {
+                currentSlide = 1;
+            }
+
+            document
+                .getElementById("slide" + currentSlide)
+                .classList.add("active");
+        }
+
+    </script>
+
+</body>
+</html>
