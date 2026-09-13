@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You ❤️</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ffd6e7, #e7d9ff);
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .card {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px 30px;
+            border-radius: 25px;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+            max-width: 420px;
+        }
+
+        .heart {
+            font-size: 90px;
+            animation: beat 1s infinite;
+        }
+
+        @keyframes beat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.25);
+            }
+        }
+
+        h1 {
+            color: #d6336c;
+        }
+
+        p {
+            color: #555;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        button {
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            background: #d6336c;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <div class="heart">❤️</div>
+
+        <h1>Hey, Smile 😊</h1>
+
+        <p>
+            I know today might not be your best day,
+            but just remember that things will get better.
+            Take a deep breath and keep smiling. 🌸
+        </p>
+
+        <button onclick="showMessage()">Click Here ✨</button>
+
+        <p id="message"></p>
+    </div>
+
+    <script>
+        function showMessage() {
+            document.getElementById("message").innerHTML =
+                "You deserve a little happiness today. ❤️";
+        }
+    </script>
+
+</body>
+</html>
