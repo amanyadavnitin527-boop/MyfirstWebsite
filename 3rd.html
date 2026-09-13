@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sanam.exe 😂</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    font-family:Arial, sans-serif;
+    background:#080808;
+    color:white;
+    overflow:hidden;
+}
+
+.slide{
+    display:none;
+    height:100vh;
+    width:100%;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:25px;
+}
+
+.slide.active{
+    display:flex;
+    animation:enter .5s ease;
+}
+
+@keyframes enter{
+    from{
+        opacity:0;
+        transform:scale(.85) rotate(-2deg);
+    }
+    to{
+        opacity:1;
+        transform:scale(1) rotate(0);
+    }
+}
+
+/* SLIDE 1 */
+.one{
+    background:
+    radial-gradient(circle at top,#ff3b3b 0,#150000 35%,#050505 75%);
+}
+
+.warning{
+    border:4px solid #ff3030;
+    padding:35px 25px;
+    max-width:550px;
+    box-shadow:0 0 30px #ff0000;
+    background:#100000;
+    transform:rotate(-1deg);
+}
+
+.warning h1{
+    font-size:42px;
+    color:#ff3b3b;
+    margin-bottom:20px;
+    text-shadow:3px 3px #000;
+}
+
+.warning p{
+    font-size:20px;
+    line-height:1.6;
+}
+
+button{
+    margin-top:28px;
+    padding:14px 25px;
+    border:none;
+    border-radius:30px;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    background:white;
+    color:#111;
+    transition:.2s;
+}
+
+button:hover{
+    transform:scale(1.08);
+}
+
+/* SLIDE 2 */
+.two{
+    background:#171717;
+}
+
+.roast-box{
+    max-width:600px;
+}
+
+.roast-box .emoji{
+    font-size:75px;
+    animation:bounce 1s infinite alternate;
+}
+
+@keyframes bounce{
+    to{transform:translateY(-15px) rotate(5deg);}
+}
+
+.roast-box h2{
+    font-size:38px;
+    margin:15px 0;
+}
+
+.roast{
+    margin:12px auto;
+    padding:14px;
+    max-width:400px;
+    background:#292929;
+    border-left:6px solid #ffcc00;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.roast:nth-child(odd){
+    transform:rotate(1deg);
+}
+
+.roast:nth-child(even){
+    transform:rotate(-1deg);
+}
+
+/* SLIDE 3 */
+.three{
+    background:
+    linear-gradient(135deg,#14002b,#001d2b,#22000d);
+}
+
+.final{
+    max-width:600px;
+    border:2px dashed white;
+    padding:35px 25px;
+    border-radius:25px;
+    background:rgba(255,255,255,.07);
+    box-shadow:0 0 35px rgba(255,255,255,.15);
+}
+
+.final h1{
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.final p{
+    font-size:21px;
+    line-height:1.7;
+}
+
+.big{
+    font-size:60px;
+    margin:15px;
+}
+
+.small{
+    opacity:.7;
+    font-size:14px;
+    margin-top:18px;
+}
+
+/* floating stuff */
+.float{
+    position:fixed;
+    font-size:30px;
+    animation:floatUp 4s linear infinite;
+    pointer-events:none;
+}
+
+@keyframes floatUp{
+    from{
+        transform:translateY(100vh) rotate(0);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-120vh) rotate(360deg);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- SLIDE 1 -->
+<section class="slide one active">
+    <div class="warning">
+        <h1>🚨 SANAM.EXE 🚨</h1>
+
+        <p>
+            SYSTEM ALERT! ⚠️<br><br>
+            Ek ajeeb sa creature detect hua hai...<br>
+            naam hai <b>SANAM</b> 😂
+        </p>
+
+        <button onclick="nextSlide()">Investigate 🕵️</button>
+    </div>
+</section>
+
+
+<!-- SLIDE 2 -->
+<section class="slide two">
+    <div class="roast-box">
+
+        <div class="emoji">🐒</div>
+
+        <h2>ROAST MODE: ON 🔥</h2>
+
+        <div class="roast">
+            Sanam, tu bandar hai 🐒😂
+        </div>
+
+        <div class="roast">
+            Thoda sa suar bhi hai 🐷😭
+        </div>
+
+        <div class="roast">
+            Chiiii yaar 🤢😂
+        </div>
+
+        <div class="roast">
+            Tu normal insaan kab banega? 💀
+        </div>
+
+        <button onclick="nextSlide()">Aur sunna hai? 👀</button>
+    </div>
+</section>
+
+
+<!-- SLIDE 3 -->
+<section class="slide three">
+    <div class="final">
+
+        <div class="big">😂🐒🐷</div>
+
+        <h1>Bas Sanam, ab rona mat 😭</h1>
+
+        <p>
+            Itna roast sirf isliye kiya kyunki<br>
+            <b>tu special namuna hai.</b> 😂
+            <br><br>
+            Bura lage toh...<br>
+            <b>Sorry bolne wala nahi hoon 😎</b>
+        </p>
+
+        <button onclick="roastAgain()">
+            🔥 Ek baar aur roast
+        </button>
+
+        <div class="small">
+            Made specially for Sanam.exe 💀
+        </div>
+    </div>
+</section>
+
+
+<script>
+
+let current = 0;
+const slides = document.querySelectorAll(".slide");
+
+function nextSlide(){
+
+    slides[current].classList.remove("active");
+
+    current++;
+
+    if(current >= slides.length){
+        current = 0;
+    }
+
+    slides[current].classList.add("active");
+}
+
+function roastAgain(){
+
+    alert("SANAM! 🐒\n\nTu officially ek certified namuna hai 😂💀");
+
+    createEmoji();
+}
+
+function createEmoji(){
+
+    const emojis = ["🐒","🐷","😂","💀","🤡","🔥"];
+
+    for(let i=0;i<12;i++){
+
+        const e = document.createElement("div");
+
+        e.className = "float";
+        e.innerText = emojis[Math.floor(Math.random()*emojis.length)];
+
+        e.style.left = Math.random()*100 + "%";
+        e.style.animationDuration = (2 + Math.random()*3) + "s";
+
+        document.body.appendChild(e);
+
+        setTimeout(()=>{
+            e.remove();
+        },5000);
+    }
+}
+
+</script>
+
+</body>
+</html>
