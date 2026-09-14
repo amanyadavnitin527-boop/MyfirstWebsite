@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dark Aesthetic Tree</title>
+<style>
+  *{ margin:0; padding:0; box-sizing:border-box; }
+
+  html, body{
+    height:100%;
+    background: radial-gradient(circle at 50% 20%, #0f1a2b 0%, #060912 60%, #020308 100%);
+    overflow:hidden;
+    font-family: sans-serif;
+  }
+
+  .scene{
+    position:relative;
+    width:100%;
+    height:100vh;
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+  }
+
+  /* ---------- STARS ---------- */
+  .star{
+    position:absolute;
+    width:2px; height:2px;
+    background:#cfe0ff;
+    border-radius:50%;
+    opacity:0.6;
+    animation: twinkle 4s ease-in-out infinite;
+  }
+  @keyframes twinkle{
+    0%,100%{ opacity:0.15; }
+    50%{ opacity:1; }
+  }
+
+  /* ---------- MOON ---------- */
+  .moon{
+    position:absolute;
+    top:8%;
+    right:12%;
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    background: radial-gradient(circle at 35% 35%, #fdf6e3, #e8d8a8 60%, #cbb877 100%);
+    box-shadow: 0 0 60px 20px rgba(255, 244, 200, 0.25);
+    animation: glow 6s ease-in-out infinite;
+  }
+  @keyframes glow{
+    0%,100%{ box-shadow: 0 0 60px 20px rgba(255,244,200,0.2); }
+    50%{ box-shadow: 0 0 90px 30px rgba(255,244,200,0.4); }
+  }
+
+  /* ---------- GROUND ---------- */
+  .ground{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:12%;
+    background: linear-gradient(180deg, #0a0f1a, #030509);
+  }
+
+  /* ---------- TREE ---------- */
+  svg#tree{
+    position:relative;
+    z-index:2;
+    width: min(70vw, 600px);
+    height: 80vh;
+  }
+
+  .branch{
+    fill:none;
+    stroke:#3a2f28;
+    stroke-linecap:round;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: grow 3.5s ease forwards;
+  }
+
+  @keyframes grow{
+    to{ stroke-dashoffset: 0; }
+  }
+
+  .leaf{
+    fill: #d9a441;
+    opacity:0;
+    animation: bloom 1.2s ease forwards;
+  }
+
+  @keyframes bloom{
+    from{ opacity:0; transform: scale(0.2); }
+    to{ opacity:0.9; transform: scale(1); }
+  }
+
+  /* ---------- FIREFLIES ---------- */
+  .firefly{
+    position:absolute;
+    width:5px; height:5px;
+    border-radius:50%;
+    background: #ffe9a8;
+    box-shadow: 0 0 8px 3px rgba(255,230,150,0.7);
+    animation: float 8s ease-in-out infinite;
+  }
+
+  @keyframes float{
+    0%   { transform: translate(0,0); opacity:0.3; }
+    25%  { transform: translate(20px,-30px); opacity:1; }
+    50%  { transform: translate(-15px,-60px); opacity:0.6; }
+    75%  { transform: translate(25px,-90px); opacity:1; }
+    100% { transform: translate(0,-120px); opacity:0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="scene" id="scene">
+  <div class="moon"></div>
+  <div class="ground"></div>
+
+  <svg id="tree" viewBox="0 0 400 600">
+    <!-- trunk -->
+    <path class="branch" d="M200,600 C195,500 205,450 200,400" stroke-width="14"/>
+    <!-- main branches -->
+    <path class="branch" d="M200,420 C170,380 140,360 100,330" stroke-width="8" style="animation-delay:0.6s"/>
+    <path class="branch" d="M200,420 C230,380 260,360 300,330" stroke-width="8" style="animation-delay:0.6s"/>
+    <path class="branch" d="M200,460 C180,430 160,410 130,390" stroke-width="6" style="animation-delay:0.9s"/>
+    <path class="branch" d="M200,460 C220,430 240,410 270,390" stroke-width="6" style="animation-delay:0.9s"/>
+    <!-- sub branches -->
+    <path class="branch" d="M100,330 C85,310 70,300 50,280" stroke-width="4" style="animation-delay:1.3s"/>
+    <path class="branch" d="M100,330 C95,305 100,290 90,265" stroke-width="4" style="animation-delay:1.3s"/>
+    <path class="branch" d="M300,330 C315,310 330,300 350,280" stroke-width="4" style="animation-delay:1.3s"/>
+    <path class="branch" d="M300,330 C305,305 300,290 310,265" stroke-width="4" style="animation-delay:1.3s"/>
+    <path class="branch" d="M130,390 C115,370 105,355 90,335" stroke-width="4" style="animation-delay:1.5s"/>
+    <path class="branch" d="M270,390 C285,370 295,355 310,335" stroke-width="4" style="animation-delay:1.5s"/>
+
+    <!-- leaves / glowing dots -->
+    <g id="leaves"></g>
+  </svg>
+</div>
+
+<script>
+  const scene = document.getElementById('scene');
+
+  // stars
+  for(let i=0;i<120;i++){
+    const s = document.createElement('div');
+    s.className = 'star';
+    s.style.top = Math.random()*70 + '%';
+    s.style.left = Math.random()*100 + '%';
+    s.style.animationDelay = (Math.random()*4) + 's';
+    scene.appendChild(s);
+  }
+
+  // fireflies
+  for(let i=0;i<18;i++){
+    const f = document.createElement('div');
+    f.className = 'firefly';
+    f.style.left = (30 + Math.random()*40) + '%';
+    f.style.bottom = (10 + Math.random()*15) + '%';
+    f.style.animationDelay = (Math.random()*8) + 's';
+    f.style.animationDuration = (6 + Math.random()*6) + 's';
+    scene.appendChild(f);
+  }
+
+  // leaves as glowing circles at branch tips
+  const tips = [
+    [50,280],[90,265],[350,280],[310,265],
+    [90,335],[310,335],[130,390],[270,390],
+    [100,330],[300,330]
+  ];
+  const leavesGroup = document.getElementById('leaves');
+  tips.forEach((pt, i) => {
+    for(let j=0;j<4;j++){
+      const c = document.createElementNS("http://www.w3.org/2000/svg","circle");
+      c.setAttribute("cx", pt[0] + (Math.random()*30-15));
+      c.setAttribute("cy", pt[1] + (Math.random()*30-15));
+      c.setAttribute("r", 6 + Math.random()*5);
+      c.setAttribute("class","leaf");
+      c.style.animationDelay = (1.8 + i*0.15 + j*0.05) + "s";
+      leavesGroup.appendChild(c);
+    }
+  });
+</script>
+
+</body>
+</html>
