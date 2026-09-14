@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Oyee Choti Mahima 😂</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    overflow:hidden;
+    font-family:"Trebuchet MS", sans-serif;
+    background:#fff4fb;
+}
+
+/* ---------- SLIDES ---------- */
+
+.slide{
+    position:absolute;
+    inset:0;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:25px;
+}
+
+.slide.active{
+    display:flex;
+    animation:show .6s ease;
+}
+
+@keyframes show{
+    from{
+        opacity:0;
+        transform:translateX(100%);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+
+/* ---------- SLIDE 1 ---------- */
+
+.s1{
+    background:
+        radial-gradient(circle at 20% 20%,#ffd6ec 0 12%,transparent 13%),
+        radial-gradient(circle at 80% 80%,#d9f7ff 0 15%,transparent 16%),
+        #fff8fc;
+}
+
+.card1{
+    width:min(600px,95%);
+    padding:45px 30px;
+    text-align:center;
+    background:white;
+    border-radius:35px;
+    box-shadow:0 20px 50px rgba(150,80,130,.18);
+    border:3px solid #ffb7da;
+}
+
+.mini{
+    font-size:18px;
+    color:#a45b83;
+    letter-spacing:3px;
+}
+
+.card1 h1{
+    margin:18px 0;
+    font-size:48px;
+    color:#e94f9b;
+}
+
+.card1 p{
+    font-size:21px;
+    color:#555;
+    line-height:1.6;
+}
+
+button{
+    border:0;
+    padding:14px 27px;
+    margin-top:25px;
+    border-radius:50px;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    background:#ff69ad;
+    color:white;
+    box-shadow:0 8px 18px rgba(255,80,160,.25);
+    transition:.25s;
+}
+
+button:hover{
+    transform:translateY(-4px) scale(1.05);
+}
+
+
+/* ---------- SLIDE 2 ---------- */
+
+.s2{
+    background:#151515;
+    color:white;
+}
+
+.polaroid{
+    width:min(520px,95%);
+    text-align:center;
+}
+
+.polaroid .paper{
+    background:#fff;
+    color:#222;
+    padding:35px 25px 45px;
+    transform:rotate(-2deg);
+    box-shadow:12px 15px 0 #ff5fa8;
+}
+
+.polaroid h2{
+    font-size:42px;
+    margin-bottom:25px;
+}
+
+.polaroid p{
+    font-size:23px;
+    line-height:1.7;
+}
+
+.sticker{
+    position:absolute;
+    font-size:60px;
+}
+
+.st1{
+    top:10%;
+    left:10%;
+    transform:rotate(-15deg);
+}
+
+.st2{
+    bottom:10%;
+    right:10%;
+    transform:rotate(15deg);
+}
+
+
+/* ---------- SLIDE 3 ---------- */
+
+.s3{
+    background:#c9f5ff;
+}
+
+.chat{
+    width:min(600px,95%);
+}
+
+.chat-title{
+    text-align:center;
+    font-size:35px;
+    color:#126579;
+    margin-bottom:25px;
+}
+
+.msg{
+    width:max-content;
+    max-width:85%;
+    padding:15px 20px;
+    margin:13px 0;
+    border-radius:20px;
+    font-size:19px;
+    box-shadow:0 5px 12px rgba(0,0,0,.08);
+}
+
+.left{
+    background:white;
+    border-bottom-left-radius:4px;
+}
+
+.right{
+    margin-left:auto;
+    background:#52c7e8;
+    color:white;
+    border-bottom-right-radius:4px;
+}
+
+.typing{
+    margin-top:18px;
+    color:#48727c;
+    font-style:italic;
+}
+
+
+/* ---------- SLIDE 4 ---------- */
+
+.s4{
+    background:
+        linear-gradient(135deg,#ffe0f0,#e5d7ff,#d8f7ff);
+}
+
+.final{
+    text-align:center;
+    width:min(650px,95%);
+}
+
+.final .emoji{
+    font-size:75px;
+    animation:shake .8s infinite alternate;
+}
+
+@keyframes shake{
+    from{transform:rotate(-7deg);}
+    to{transform:rotate(7deg);}
+}
+
+.final h1{
+    font-size:45px;
+    color:#d83e91;
+    margin:20px 0;
+}
+
+.final p{
+    font-size:21px;
+    line-height:1.7;
+    color:#444;
+}
+
+.small{
+    margin-top:20px;
+    color:#777;
+    font-size:14px;
+}
+
+
+/* ---------- FLOATING EMOJIS ---------- */
+
+.float{
+    position:fixed;
+    bottom:-60px;
+    font-size:30px;
+    pointer-events:none;
+    animation:up 5s linear forwards;
+}
+
+@keyframes up{
+    to{
+        transform:translateY(-110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- SLIDE 1 -->
+
+<section class="slide s1 active">
+
+    <div class="card1">
+
+        <div class="mini">🚨 IMPORTANT MESSAGE 🚨</div>
+
+        <h1>Oyee Choti Mahima 😂</h1>
+
+        <p>
+            Kahan ho ji aap? 👀<br>
+            Ek chota sa insaan aaj<br>
+            bahut yaad aa raha hai... 😭😂
+        </p>
+
+        <button onclick="nextSlide()">
+            Kya bol rahe ho? 👀
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- SLIDE 2 -->
+
+<section class="slide s2">
+
+    <div class="sticker st1">🐣</div>
+    <div class="sticker st2">😂</div>
+
+    <div class="polaroid">
+
+        <div class="paper">
+
+            <h2>BREAKING NEWS 📰</h2>
+
+            <p>
+                Ek <b>bahut hi choti si ladki</b>
+                gayab hai. 😭
+                <br><br>
+                Naam: <b>Mahima</b> 😂
+                <br>
+                Height: <b>Secret hai ji 🤫</b>
+                <br>
+                Problem: <b>Bahut yaad aa rahi hai.</b> 🥺
+            </p>
+
+            <button onclick="nextSlide()">
+                Search Continue 🔎
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SLIDE 3 -->
+
+<section class="slide s3">
+
+    <div class="chat">
+
+        <div class="chat-title">
+            💬 Mahima Chat Department
+        </div>
+
+        <div class="msg left">
+            Oyee Choti Mahima? 🐣
+        </div>
+
+        <div class="msg right">
+            Haan bolo 😂
+        </div>
+
+        <div class="msg left">
+            Kahan gayab ho? 👀
+        </div>
+
+        <div class="msg right">
+            Kyu? 😭
+        </div>
+
+        <div class="msg left">
+            Bas aise hi... 😌
+            <br>
+            <b>Yaad aa rahi thi.</b> 😂
+        </div>
+
+        <div class="typing">
+            Mahima is probably smiling right now... 😂
+        </div>
+
+        <button onclick="nextSlide()">
+            Last message 👀
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- SLIDE 4 -->
+
+<section class="slide s4">
+
+    <div class="final">
+
+        <div class="emoji">
+            🐣😂
+        </div>
+
+        <h1>Oyee Choti Mahima ❤️</h1>
+
+        <p>
+            Itna bhi mat udna ji... 😂
+            <br><br>
+
+            Bas mazaak kar raha hoon,
+            <br>
+            lekin sach mein...
+            <br><br>
+
+            <b>Aaj tumhari thodi si yaad aa rahi thi. 🥺😂</b>
+            <br><br>
+
+            Ab jaldi se smile karo aur aajao yaha,
+            warna phir se chidhana shuru karu. 😭🔥
+        </p>
+
+        <button onclick="surprise()">
+            Ek last surprise 🎁
+        </button>
+
+        <div class="small">
+            Specially for Choti Mahima 😂🌸
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+let current = 0;
+
+const slides = document.querySelectorAll(".slide");
+
+
+function nextSlide(){
+
+    slides[current].classList.remove("active");
+
+    current++;
+
+    if(current >= slides.length){
+        current = 0;
+    }
+
+    slides[current].classList.add("active");
+}
+
+
+function surprise(){
+
+    const emojis = [
+        "😂","🐣","🌸","💗","🤣","✨","🥺","🫶"
+    ];
+
+    for(let i=0;i<25;i++){
+
+        const e = document.createElement("div");
+
+        e.className = "float";
+
+        e.innerText =
+            emojis[Math.floor(Math.random()*emojis.length)];
+
+        e.style.left =
+            Math.random()*100 + "vw";
+
+        e.style.animationDuration =
+            (3 + Math.random()*3) + "s";
+
+        document.body.appendChild(e);
+
+        setTimeout(()=>{
+            e.remove();
+        },6000);
+    }
+
+    setTimeout(()=>{
+        alert(
+            "Oyee Choti Mahima 😂❤️\n\n" +
+            "aajao jaldi se...\n" +
+            "warna mujhe phir se tumhe chidhana padega 🐣😂"
+        );
+    },500);
+}
+
+</script>
+
+</body>
+</html>
