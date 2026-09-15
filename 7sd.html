@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ek Chhoti Si Baat 🌙</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    overflow:hidden;
+    font-family:Georgia, serif;
+    background:#090d1a;
+    color:#fff;
+}
+
+/* ---------- COMMON ---------- */
+
+.slide{
+    position:absolute;
+    inset:0;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:25px;
+}
+
+.slide.active{
+    display:flex;
+    animation:pageIn .7s ease;
+}
+
+@keyframes pageIn{
+    from{
+        opacity:0;
+        transform:scale(.96);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+/* Stars */
+
+.star{
+    position:fixed;
+    width:3px;
+    height:3px;
+    background:white;
+    border-radius:50%;
+    opacity:.7;
+    animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+    from{opacity:.2;}
+    to{opacity:1;}
+}
+
+
+/* ---------- SLIDE 1 ---------- */
+
+.s1{
+    background:
+    radial-gradient(circle at 50% 20%,#29365e,#0b1021 45%,#050711);
+}
+
+.intro{
+    text-align:center;
+    max-width:650px;
+}
+
+.moon{
+    font-size:85px;
+    animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+    50%{
+        transform:translateY(-12px);
+    }
+}
+
+.intro h1{
+    font-size:45px;
+    margin:25px 0 15px;
+}
+
+.intro p{
+    font-size:20px;
+    line-height:1.7;
+    color:#cdd5ee;
+}
+
+button{
+    border:1px solid #8292c9;
+    background:rgba(255,255,255,.08);
+    color:white;
+    padding:13px 25px;
+    border-radius:30px;
+    font-size:16px;
+    cursor:pointer;
+    margin-top:25px;
+    transition:.3s;
+}
+
+button:hover{
+    background:#fff;
+    color:#111;
+    transform:translateY(-3px);
+}
+
+
+/* ---------- SLIDE 2 ---------- */
+
+.s2{
+    background:#11182b;
+}
+
+.note{
+    width:min(650px,95%);
+    padding:40px 35px;
+    background:#f8f1dc;
+    color:#27251f;
+    box-shadow:12px 15px 0 rgba(255,255,255,.08);
+    transform:rotate(-1deg);
+    position:relative;
+}
+
+.note:before{
+    content:"";
+    position:absolute;
+    left:25px;
+    right:25px;
+    top:25px;
+    bottom:25px;
+    border:1px solid #cbbf9e;
+    pointer-events:none;
+}
+
+.note h2{
+    font-size:34px;
+    margin-bottom:25px;
+    color:#333;
+}
+
+.note p{
+    font-size:20px;
+    line-height:1.8;
+}
+
+
+/* ---------- SLIDE 3 ---------- */
+
+.s3{
+    background:
+    radial-gradient(circle at 30% 30%,#43294d,#151122 50%,#080710);
+}
+
+.chat{
+    width:min(600px,95%);
+}
+
+.chat h2{
+    text-align:center;
+    margin-bottom:30px;
+    font-size:34px;
+}
+
+.message{
+    padding:16px 20px;
+    margin:15px 0;
+    border-radius:20px;
+    max-width:85%;
+    font-size:18px;
+    line-height:1.5;
+}
+
+.me{
+    margin-left:auto;
+    background:#66528f;
+    border-bottom-right-radius:4px;
+}
+
+.you{
+    background:#252438;
+    border-bottom-left-radius:4px;
+}
+
+.typing{
+    text-align:center;
+    margin-top:25px;
+    color:#aaa4c4;
+    font-size:14px;
+}
+
+
+/* ---------- SLIDE 4 ---------- */
+
+.s4{
+    background:
+    linear-gradient(145deg,#101827,#1c2639,#111522);
+}
+
+.letter{
+    width:min(650px,95%);
+    text-align:center;
+}
+
+.letter .heart{
+    font-size:65px;
+    margin-bottom:20px;
+}
+
+.letter h2{
+    font-size:38px;
+    margin-bottom:25px;
+}
+
+.letter p{
+    font-size:20px;
+    line-height:1.8;
+    color:#d9deeb;
+}
+
+
+/* ---------- SLIDE 5 ---------- */
+
+.s5{
+    background:
+    radial-gradient(circle at center,#29375c 0,#0b1020 65%);
+}
+
+.final{
+    text-align:center;
+    max-width:650px;
+}
+
+.final h1{
+    font-size:42px;
+    margin-bottom:25px;
+}
+
+.final p{
+    font-size:20px;
+    line-height:1.8;
+    color:#d6dced;
+}
+
+.signature{
+    margin-top:30px;
+    font-size:17px;
+    color:#8f9bc1;
+}
+
+
+/* ---------- FLOATING HEARTS ---------- */
+
+.heartFloat{
+    position:fixed;
+    bottom:-40px;
+    font-size:25px;
+    animation:rise 5s linear forwards;
+    pointer-events:none;
+}
+
+@keyframes rise{
+    to{
+        transform:translateY(-110vh) rotate(25deg);
+        opacity:0;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- SLIDE 1 -->
+
+<section class="slide s1 active">
+
+    <div class="intro">
+
+        <div class="moon">🌙</div>
+
+        <h1>Oyee Mahima...</h1>
+
+        <p>
+            Aaj kuch jyada hi busy ho gayi ho kya? 👀
+            <br><br>
+            Pata nahi kyun, aaj tumhara message
+            thoda zyada wait kar raha tha...
+        </p>
+
+        <button onclick="nextSlide()">
+            Ek baat bolun? 💭
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- SLIDE 2 -->
+
+<section class="slide s2">
+
+    <div class="note">
+
+        <h2>Dear Mahima, 🌸</h2>
+
+        <p>
+            Tumhe pata hai na...
+            tumse baat ho jaati hai toh din thoda
+            aur achha lagta hai.
+            <br><br>
+
+            Isliye jab tum message nahi karti,
+            toh honestly thoda ajeeb sa lagta hai.
+            😅
+            <br><br>
+
+            Aaj bhi socha shayad tum busy hogi,
+            isliye wait karta raha.
+        </p>
+
+        <button onclick="nextSlide()">
+            Aur ek baat...
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- SLIDE 3 -->
+
+<section class="slide s3">
+
+    <div class="chat">
+
+        <h2>💬 Dil ki notification</h2>
+
+        <div class="message me">
+            Mahima? 👀
+        </div>
+
+        <div class="message you">
+            Kya hua? 😭
+        </div>
+
+        <div class="message me">
+            Kuch nahi...
+            bas tumhari message notification
+            ka wait kar raha tha 😂
+        </div>
+
+        <div class="message you">
+            Acha ji 😭
+        </div>
+
+        <div class="message me">
+            Haan ji...
+            tumhare bina thoda boring lagta hai. 🌙
+        </div>
+
+        <div class="typing">
+            typing... but overthinking nahi karni 😌
+        </div>
+
+        <button onclick="nextSlide()">
+            Last wali baat ❤️
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- SLIDE 4 -->
+
+<section class="slide s4">
+
+    <div class="letter">
+
+        <div class="heart">🫶</div>
+
+        <h2>Ek request nahi... bas honesty.</h2>
+
+        <p>
+            Agar kabhi tumhe lage ki tum mujhse
+            dheere-dheere baat kam karna chahti ho,
+            toh mujhe bata dena.
+            <br><br>
+
+            Mujhe guess karte rehne se achha hai
+            tum seedha bata do.
+            <br><br>
+
+            Aur agar kabhi meri kisi baat se hurt hui ho,
+            toh bhi bata dena.
+            Main tumse gussa rehne ke bajay
+            tumhari baat samajhna prefer karunga. 🌸
+        </p>
+
+        <button onclick="nextSlide()">
+            One last thing...
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- SLIDE 5 -->
+
+<section class="slide s5">
+
+    <div class="final">
+
+        <div style="font-size:70px;">🌙💗</div>
+
+        <h1>Bas itna hi kehna tha...</h1>
+
+        <p>
+            Tum message karo ya thoda busy raho,
+            main tumse naraz rehne wala nahi hoon.
+            <br><br>
+
+            Bas jab time mile,
+            ek chhota sa <b>“Oyee”</b> bhej dena...
+            <br>
+            pata chal jayega meri Choti Mahima
+            abhi bhi yahin hai. 😂🌸
+            <br><br>
+
+            Aur haan...
+            <br>
+            <b>zyada busy bhi mat hona ji 😭😂</b>
+        </p>
+
+        <button onclick="finalSurprise()">
+            Chalo ab smile karo 😌
+        </button>
+
+        <div class="signature">
+            — From the person waiting for that “Oyee” notification 💭
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+/* Create stars */
+
+for(let i=0;i<70;i++){
+
+    let star=document.createElement("div");
+
+    star.className="star";
+
+    star.style.left=Math.random()*100+"vw";
+    star.style.top=Math.random()*100+"vh";
+
+    star.style.animationDelay=
+        Math.random()*2+"s";
+
+    document.body.appendChild(star);
+}
+
+
+/* Slide system */
+
+let current=0;
+
+const slides=document.querySelectorAll(".slide");
+
+function nextSlide(){
+
+    slides[current].classList.remove("active");
+
+    current++;
+
+    if(current>=slides.length){
+        current=0;
+    }
+
+    slides[current].classList.add("active");
+}
+
+
+/* Final surprise */
+
+function finalSurprise(){
+
+    const emojis=["💗","🌸","✨","🥺","😂","🌙","🫶"];
+
+    for(let i=0;i<30;i++){
+
+        let heart=document.createElement("div");
+
+        heart.className="heartFloat";
+
+        heart.innerText=
+            emojis[Math.floor(Math.random()*emojis.length)];
+
+        heart.style.left=
+            Math.random()*100+"vw";
+
+        heart.style.animationDuration=
+            (3+Math.random()*3)+"s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(()=>{
+            heart.remove();
+        },6000);
+    }
+
+    setTimeout(()=>{
+
+        alert(
+            "Oyee Mahima 😂❤️\n\n" +
+            "Ab smile kar do ji...\n" +
+            "Bas wahi chahiye tha 🌸"
+        );
+
+    },600);
+
+}
+
+</script>
+
+</body>
+</html>
